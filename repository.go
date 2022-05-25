@@ -253,7 +253,7 @@ func (r *Repository) buildContentsURL(ro *RepositoryFilesOptions) (string, error
 	}
 
 	query := url.Query()
-	r.c.addMaxDepthParam(&query, nil)
+	r.c.addMaxDepthParam(&query, &ro.MaxDepth)
 	url.RawQuery = query.Encode()
 
 	return url.String(), nil
